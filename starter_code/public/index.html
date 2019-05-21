@@ -1,0 +1,108 @@
+<!doctype html>
+<html ⚡ lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <link rel="canonical" href=".">
+    <title>AMP Script!</title>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <style amp-custom>
+      body {
+        line-height: 1.6rem;
+        font-size: 1rem;
+      }
+      main {
+        padding: 56px 0;
+        margin: 10px;
+      }
+      main h2 {
+        margin-left: .5rem;
+        margin-right: .5rem;
+      }
+      .top {
+        top: 0;
+      }
+      .nav-bar h1 {
+        margin: 0;
+        text-align: center;
+      }
+      .nav-bar {
+        background: #005af0;
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,.07);
+        color: #ffffff;
+        height: 56px;
+        line-height: 56px;
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+      .card {
+        background: #dee6ef;
+        padding: .5rem;
+        margin: .5rem;
+        border-radius: 8px;
+      }
+      button {
+        background-color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav-bar top">
+      <h1>AMP Script</h1>
+    </header>
+    <main>
+        <form method="post"
+        action-xhr="/form"
+        target="_top"
+        class="card">
+        <label>
+          <p>Enter your email and create a password.</p>
+          <span>Email:</span><br>
+          <input type="text"
+            name="email"
+            required>
+        </label>
+        <br>
+        <label>
+          <span>Password:</span><br>
+          <input type=password
+            name="password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+            id="passwordBox"
+            role="input"
+            tabindex=0 
+            on="tap:rules.show"><br />
+          <div id="rules" hidden>
+            <span>Your password must contain each of the following:</span>
+            <ul>
+              <li id="lowercase">Lowercase letter</li>
+              <li id="capital">Capital letter</li>
+              <li id="number">Number</li>
+              <li id="special">Special character (@$!%*?&)</li>
+              <li id="eight">At least 8 characters long</li>
+            </ul>
+          </div>
+         </label>
+         <br>
+         <button type="submit"
+           id="submitButton"> Submit </button> 
+           <div submit-success>
+              <template type="amp-mustache">
+                Success!
+              </template>
+            </div>
+            <div submit-error>
+              <template type="amp-mustache">
+                Error!
+              </template>
+              </div>
+        </form>
+    </main>
+  </body>
+</html>
