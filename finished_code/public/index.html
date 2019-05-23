@@ -7,9 +7,9 @@
     <link rel="canonical" href=".">
     <title>AMP Script!</title>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script>
     <style amp-custom>
       body {
         line-height: 1.6rem;
@@ -47,18 +47,18 @@
         margin: .5rem;
         border-radius: 8px;
       }
-      .valid {
+      button {
+        background-color: #ffffff;
+      }
+      .checkPass {
         color: #2d7b1f;
       } 
-      .invalid {
+      .checkFail {
         color:#c11136;
-      } 
+      }
       .unclick {
         pointer-events: none; 
         color: #a9a9a9;
-      }
-      button {
-        background-color: #ffffff;
       }
     </style>
   </head>
@@ -67,13 +67,13 @@
       <h1>AMP Script</h1>
     </header>
     <main>
-      <amp-script src="http://localhost:8080/js/script.js">
+       <amp-script src="http://localhost:8080/js/script.js">
         <form method="post"
         action-xhr="/form"
         target="_top"
         class="card">
+        <p>Enter your email and create a password.</p>
         <label>
-          <p>Enter your email and create a password.</p>
           <span>Email:</span><br>
           <input type="text"
             name="email"
@@ -93,17 +93,17 @@
           <div id="rules" hidden>
             <span>Your password must contain each of the following:</span>
             <ul>
-              <li id="lowercase" class="invalid">Lowercase letter</li>
-              <li id="capital" class="invalid">Capital letter</li>
-              <li id="number" class="invalid">Number</li>
-              <li id="special" class="invalid">Special character (@$!%*?&)</li>
-              <li id="eight" class="invalid">At least 8 characters long</li>
-            </ul>
+              <li id="lowercase" class="checkFail">Lowercase letter</li>
+              <li id="capital" class="checkFail">Capital letter</li>
+              <li id="number" class="checkFail">Number</li>
+              <li id="special" class="checkFail">Special character (@$!%*?&)</li>
+              <li id="eight" class="checkFail">At least 8 characters long</li>
+            </ul>  
           </div>
          </label>
          <br>
          <button type="submit"
-           id="submitButton" class="unclick"> Submit </button> 
+         id="submitButton" class="unclick"> Submit </button>
            <div submit-success>
               <template type="amp-mustache">
                 Success!
