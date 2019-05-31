@@ -43,11 +43,10 @@ function initCheckPassword(element) {
     listItem.classList.add("checkFail");
   }
   const checkPassword = () => {
-    let checksMet = 0;
-    let successTest = passwordChecks.forEach((item) => {
+    passwordChecks.forEach((item) => {
       let passed = item.checkRegEx(element.value);
        // passed logic 
-       return passed ? checkMet(item.text) : checkRemoved(item.text);
+       passed ? checkMet(item.text) : checkRemoved(item.text);
     });
   } 
   
