@@ -50,12 +50,12 @@
       button {
         background-color: #ffffff;
       }
-      .checkPass {
+      .check {
+      color:#c11136;
+      }
+      .check.pass {
         color: #2d7b1f;
       } 
-      .checkFail {
-        color:#c11136;
-      }
     </style>
   </head>
   <body>
@@ -89,11 +89,11 @@
           <div id="rules" hidden>
             <span>Your password must contain each of the following:</span>
             <ul>
-              <li id="lowercase" class="checkFail">Lowercase letter</li>
-              <li id="capital" class="checkFail">Capital letter</li>
-              <li id="number" class="checkFail">Number</li>
-              <li id="special" class="checkFail">Special character (@$!%*?&)</li>
-              <li id="eight" class="checkFail">At least 8 characters long</li>
+              <li id="lowercase" class="check">Lowercase letter</li>
+              <li id="capital" class="check">Capital letter</li>
+              <li id="number" class="check">Number</li>
+              <li id="special" class="check">Special character (@$!%*?&)</li>
+              <li id="eight" class="check">At least 8 characters long</li>
             </ul>  
           </div>
          </label>
