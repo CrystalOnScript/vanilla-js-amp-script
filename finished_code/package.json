@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sebastianbenz/amp-dev-live-2019.git"
+    "url": "git+https://github.com/CrystalOnScript/vanilla-js-amp-script.git"
   },
   "author": "AMPHTML Authors",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/sebastianbenz/amp-dev-live-2019/issues"
+    "url": "https://github.com/CrystalOnScript/vanilla-js-amp-script"
   },
-  "homepage": "https://github.com/sebastianbenz/amp-dev-live-2019#readme",
+  "homepage": "https://github.com/CrystalOnScript/vanilla-js-amp-script",
   "devDependencies": {
     "eslint": "5.16.0",
     "eslint-config-google": "0.12.0",
